@@ -1,3 +1,12 @@
+# Anne Niemiec Assignment
+# Granted an extension on assignment due to bereavement
+# Worked closely with tutor on this assignment
+# Repository:  Web-scraping-challenge
+# Folder Name:  Missions_to_Mars
+# Notebook Name: Assignment_ATN.ipynb
+# Flash app:  Assignment_ATN.app.py
+# Screenshots:  Screenshots_ATN
+
 # Web Scraping Homework - Mission to Mars
 
 ![mission_to_mars](Images/mission_to_mars.png)

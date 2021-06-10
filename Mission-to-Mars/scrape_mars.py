@@ -35,15 +35,16 @@ def Space_News(browser):
     html = browser.html
     Space_html = bs(html, "html.parser")
     Space_image=Space_html.find('img', class_='fancybox-image').get("src")
+    return Space_image 
 
+def mars_facts():
     mars_facts=pd.read_html("https://space-facts.com/mars/")[0]
     mars_facts.columns=['mars_facts','terrestrial_planet ']
     mars_facts.set_index('mars_facts', inplace=True)
-    mars_facts.to_html()
+    mars_html = mars_facts.to_html()
+    return mars_html
 
-    return Space_html, Space_image, mars_facts
-
-    def astrogeology(browser):
+def astrogeology(browser):
         
     astrogeology="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
     browser.visit(astrogeology)
@@ -63,5 +64,31 @@ def Space_News(browser):
         dictionary['url']=images
         astrogeology.append(dictionary)
         browser.back()
-   return titles, images
+    return astrogeology
+
+    #initialize browser and create function
+def initialize():
+    browser=browser_start()
+
+    #Create variables
+    title, paragraph= NASA_News(browser)
+    image= Space_News(browser)
+    facts= mars_facts()
+    hemispheres= astrogeology(browser)
+
+    Dictionary={
+        "mars_title":title, 
+        "mars_paragraph": paragraph,
+        "Space_News": image,
+        "mars_facts":facts,
+        "hemispheres": hemispheres
+    }
+
+    browser.quit()
+
+    return Dictionary
+
+
+
+
 
