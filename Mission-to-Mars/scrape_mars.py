@@ -30,11 +30,11 @@ def Space_News(browser):
     Space_News="https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html"
     browser.visit(Space_News)
 
-    featured_image_url=browser.find_by_tag('button')[1]
-    featured_image_url.click()
+   # featured_image_url=browser.find_by_tag('button')[1]
+    #featured_image_url.click()
     html = browser.html
     Space_html = bs(html, "html.parser")
-    Space_image=Space_html.find('img', class_='fancybox-image').get("src")
+    Space_image=Space_html.find('img', class_='headerimage').get("src")
     return Space_image 
 
 def mars_facts():
@@ -59,7 +59,7 @@ def astrogeology(browser):
         html = browser.html
         soup = bs(html, "html.parser")
         images=soup.find_all('img', class_='wide-image')[0].get("src")
-        titles=soup.find('div', class_='content').find('h2',class_='title')
+        titles=soup.find('div', class_='content').find('h2',class_='title').get_text()
         dictionary['title']=titles
         dictionary['url']=images
         astrogeology.append(dictionary)

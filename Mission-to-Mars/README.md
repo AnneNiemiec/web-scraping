@@ -1,6 +1,7 @@
 # Anne Niemiec Assignment
 # Granted an extension on assignment due to bereavement
 # Worked closely with tutor on this assignment
+# Will commit changes more frequently on next assignment
 # Repository:  Web-scraping-challenge
 # Folder Name:  Missions_to_Mars
 # Notebook Name: Assignment_ATN.ipynb
