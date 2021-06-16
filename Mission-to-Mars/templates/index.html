@@ -7,6 +7,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+    
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    </style>
 </head>
 
 <body>
@@ -15,13 +33,35 @@
       <h1>Mission to Mars</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
-    <img src="{{ mars.Space_News }}" alt="Mars">
     <h2>Mission to Mars</h2>
     <h3>Latest Mars News: {{ mars.mars_title }}</h3>
     <h3>How NASA's Mars Helicopter Will Reach the Red Planet's Surface: {{ mars.mars_paragraph }}</h3>
     <h3>Featured Mars Image: {{ mars.Space_news }}</h3>
-    <h3>Mars Facts: {{ mars.mars_facts }}</h3>
-    <h3>Mars Hemispheres: {{ mars.hemispheres }}</h3>
+        <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title">Mars Facts</h4>
+          {{ mars.mars_facts|safe}}
+          <div class="row">
+  </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="{{ mars.Space_News }}" style="width:25%">
+        </div>
+        <div class="column">
+        {{ mars.mars_facts|safe}}
+        </div>
+      </div>
+    <h3>{{ mars.hemispheres[0].title }} </h3>
+    <img src="{{ mars.hemispheres[0].url }}" style="width:10%">
+    <h3>{{ mars.hemispheres[1].title }} </h3>
+    <img src="{{ mars.hemispheres[1].url }}"style="width:10%">
+    <h3>{{ mars.hemispheres[2].title }} </h3>
+    <img src="{{ mars.hemispheres[2].url }}"style="width:10%">
+    <h3>{{ mars.hemispheres[3].title }} </h3>
+    <img src="{{ mars.hemispheres[3].url }}"style="width:10%">
+
      </div>
   </div>
 </body>

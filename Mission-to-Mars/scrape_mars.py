@@ -35,7 +35,8 @@ def Space_News(browser):
     html = browser.html
     Space_html = bs(html, "html.parser")
     Space_image=Space_html.find('img', class_='headerimage').get("src")
-    return Space_image 
+    Space_picture="https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/"+Space_image
+    return Space_picture
 
 def mars_facts():
     mars_facts=pd.read_html("https://space-facts.com/mars/")[0]
@@ -61,7 +62,7 @@ def astrogeology(browser):
         images=soup.find_all('img', class_='wide-image')[0].get("src")
         titles=soup.find('div', class_='content').find('h2',class_='title').get_text()
         dictionary['title']=titles
-        dictionary['url']=images
+        dictionary['url']="https://astrogeology.usgs.gov/" + images
         astrogeology.append(dictionary)
         browser.back()
     return astrogeology
