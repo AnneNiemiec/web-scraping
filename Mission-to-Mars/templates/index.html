@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--heading and button-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
     }
     </style>
 </head>
-
+<!--Intro-->
 <body>
   <div class="container-fluid">
     <div class="jumbotron text-center">
@@ -37,6 +37,8 @@
         <h4>{{ mars.mars_title }}</h4>
         
         <h5>How NASA's Mars Helicopter Will Reach the Red Planet's Surface: {{ mars.mars_paragraph }}</h5>
+
+        <!--image from scrape-->
         <h3>Featured Mars Image: {{ mars.Space_news }}</h3>
             <div class="card" style="width: 1000rem;">
             <div class="card-body">
@@ -44,18 +46,21 @@
   </div>
         </div>
       </div>
-      <div class="row">
+        <div class="row">
         <div class="column">
           <img src="{{ mars.Space_News }}" style="width:65%">
         </div>
+        <!--grid-->
         <div class="column">
             <h3>Mars Facts:</h3>
         {{ mars.mars_facts|safe}}
         </div>
       </div>
+      <!--heading-->
       <div class="text-center">
         <h2 style="width:65%"> Mars Hemispheres</h2>
         <hr>
+        <!--images-->
       <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">

@@ -6,7 +6,9 @@
 # Folder Name:  Missions_to_Mars
 # Notebook Name: Assignment_ATN.ipynb
 # Flash app:  Assignment_ATN.app.py
-# Screenshots:  Screenshots_ATN
+# HTML: index.html
+# Other: scrape_mars.py
+# Screenshots:  screenshot1_ATN & screenshot2_ATN
 
 # Web Scraping Homework - Mission to Mars
 
